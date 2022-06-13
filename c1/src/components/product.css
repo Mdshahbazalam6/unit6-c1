@@ -1,0 +1,59 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+form{
+    width: 30vw;
+    margin-left: 33vw;
+}
+form > input{
+    width: 100%;
+    padding: .5vw;
+    margin-top: .5vw;
+    border-radius: 1vw;
+}
+.MainItemBox{
+    width: 90vw;
+    margin-left: 5vw;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1vw;
+    border-radius: 1vw;
+}
+.ItemBox{
+    width: 29vw;
+    border: 2px solid #cecece;
+    border-radius: 1vw;
+}
+.ItemBox > div > img{
+    width: 100%;
+    height: 30vh;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+.ItemBox > div>div{
+    display: flex;
+    justify-content: space-between;
+}
+.deleteButton{
+    background-color: #cecece;
+    width: 20vw;
+    margin-left: 5vw;
+    padding: .5vw;
+    border-radius: .5vw;
+}
+.deleteButton:hover {
+    background-color: yellow;
+}
+/* <div className='ItemBox' >
+<div>
+    <img src={image} alt="" />
+</div>
+<div className='ItemBoxsec'>
+    <div className="information">{title}</div>
+    <div className="information">{gender}</div>
+    <div className="information">{price}</div>
+    <div className="information">{category}</div>
+</div>
+</div> */
