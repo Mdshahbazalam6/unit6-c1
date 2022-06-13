@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const ProductForm = () => {
+const ProductForm = ({click}) => {
     const[data,setData]=useState({
         title:``,
         gender:``,
@@ -28,6 +28,7 @@ fetch(`http://localhost:3001/form`,{
 .then((res)=>{
     res.json().then((res)=>{
         console.log(res)
+        click()
     })
 }).catch((error)=>{
     console.log(error)
@@ -46,7 +47,7 @@ setData({
     <form onSubmit={handleSubmit}>
         <input type="text" placeholder='title'name='title' onChange={handleChange}  />
         <input type="number" placeholder='Price' name='Price' onChange={handleChange} />
-        <input type="text" placeholder='Category' name='Category' onChange={handleChange}  />
+        <input type="text" placeholder='Category' name='Category' onChange={handleChange} />
         <input type="text" placeholder='Image' name='Image' onChange={handleChange} />
         <select name="gender" id="" onChange={handleChange} >
             <option value="">Gender</option>

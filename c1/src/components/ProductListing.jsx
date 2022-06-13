@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import './product.css'
+import Form from './ProductForm'
 
 const ProductListing = () => {
     const [arr,setArr]=useState([])
@@ -22,7 +23,7 @@ const ProductListing = () => {
     }
     useEffect(()=>{
         get()
-    },[flag])
+    },[flag,page])
 
     const del = (id)=>{
         fetch(`http://localhost:3001/form/${id}`,{
@@ -33,6 +34,7 @@ const ProductListing = () => {
 
   return (
     <>
+    < Form click={get}/>
       <h1 style={{textAlign:"center",margin:"1vw"}}>Registerd Items </h1>
     <div className='MainItemBox'>
   {
