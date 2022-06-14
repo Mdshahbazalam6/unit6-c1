@@ -46,8 +46,8 @@ setData({
   return (
     <form onSubmit={handleSubmit}>
         <input type="text" placeholder='title'name='title' onChange={handleChange}  />
-        <input type="number" placeholder='Price' name='Price' onChange={handleChange} />
-        <input type="text" placeholder='Category' name='Category' onChange={handleChange} />
+        <input type="number" placeholder='Price' name='price' onChange={handleChange} />
+        <input type="text" placeholder='Category' name='category' onChange={handleChange} />
         <input type="text" placeholder='Image' name='Image' onChange={handleChange} />
         <select name="gender" id="" onChange={handleChange} >
             <option value="">Gender</option>

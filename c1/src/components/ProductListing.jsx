@@ -9,16 +9,23 @@ const ProductListing = () => {
     const[flag,setFlag]=useState(true)
     const[total,setTotal]=useState()
     const[page,setPage]=useState(1)
+    const[error,setError]=useState(false)
+    const[loading,setLoading]=useState(false)
     const get = async()=>{
       try {
+        setLoading(true)
         let res=await fetch(`http://localhost:3001/form?_page=${page}&_limit=5`)
         let total = res.headers.get("X-Total-Count");
         setTotal(+total);
         let data=await res.json()
         console.log(data)
         setArr(data)
+        setLoading(false)
+        setError(false)
       } catch (error) {
         console.log(error)
+        setError(true)
+        setLoading(false)
       }
     }
     useEffect(()=>{
@@ -32,13 +39,18 @@ const ProductListing = () => {
         setFlag(!flag)
         }
 
+
   return (
     <>
-    < Form click={get}/>
+    {
+      loading ? (<h1>Loading</h1>):error ? (<h1>Error</h1>) : (
+        <>
+        < Form click={get}/>
       <h1 style={{textAlign:"center",margin:"1vw"}}>Registerd Items </h1>
     <div className='MainItemBox'>
   {
         arr.map(({id,title,gender,price,category,image})=>{
+          console.log(price,category)
            return(
             <div className='ItemBox' >
             <div >
@@ -57,6 +69,9 @@ const ProductListing = () => {
   
   <button className='deleteButton' onClick={()=>setPage(page-1)} disabled={page === 1} style={{marginTop:'1vw'}}>Prev</button>
       <button className='deleteButton' onClick={()=>setPage(page+1)} disabled={page === Math.ceil(total/5)}  style={{marginTop:'1vw'}}>Next</button>
+        </>
+      )
+    }
     </>
   )
 }

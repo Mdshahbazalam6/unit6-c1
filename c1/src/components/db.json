@@ -82,6 +82,23 @@
       "Category": "Formal Shirt",
       "Image": "https://rukminim2.flixcart.com/image/580/696/kylvr0w0/shirt/r/r/e/40-pesfonufo05210-peter-england-original-imagaszq2gjafcm5.jpeg?q=50",
       "id": 10
+    },
+    {
+      "id": 12,
+      "title": "Doxey",
+      "gender": "male",
+      "price": 4727,
+      "category": "salwar",
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "title": "trowser",
+      "gender": "Male",
+      "price": "300",
+      "category": "pant",
+      "image": "",
+      "Image": "https://rukminim2.flixcart.com/image/580/696/kylvr0w0/shirt/r/r/e/40-pesfonufo05210-peter-england-original-imagaszq2gjafcm5.jpeg?q=50",
+      "id": 13
     }
   ]
 }
